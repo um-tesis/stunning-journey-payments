@@ -1,11 +1,14 @@
-import express from 'express';
-import http from 'http';
-import cors from 'cors';
-import helmet from 'helmet';
-import morgan from 'morgan';
-import { rateLimit } from 'express-rate-limit';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import express from 'express';
+import { rateLimit } from 'express-rate-limit';
+import helmet from 'helmet';
+import http from 'http';
+import morgan from 'morgan';
 import xss from 'xss-clean';
+
+import { apiKeyAuth } from './middlewares';
+import paymentRouter from './routes';
 
 const app = express();
 
@@ -14,6 +17,7 @@ const app = express();
 app.use(cors());
 
 // To fix the previous error, and allow PUT, PATCH adn DELETE requests to be cross-origin we need to make an options request and implement cors as a middleware
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 app.options('*', cors());
 
 // Security HTTP Headers
@@ -39,7 +43,9 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(xss());
 
 // Routes
+app.use(apiKeyAuth);
 app.get('/health', (_, res) => res.status(200).send({ success: true }));
+app.use('/api/v1', paymentRouter);
 
 // All non-specified routes return 404
 app.get('*', (_, res) => res.status(404).send('Not Found'));

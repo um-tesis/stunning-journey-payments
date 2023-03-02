@@ -117,6 +117,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/cors@^2.8.13":
+  version "2.8.13"
+  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.13.tgz#b8ade22ba455a1b8cb3b5d3f35910fd204f84f94"
+  integrity sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/express-serve-static-core@^4.17.33":
   version "4.17.33"
   resolved "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.33.tgz"
@@ -145,6 +152,11 @@
   version "0.0.29"
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
+
+"@types/mercadopago@^1.5.8":
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/@types/mercadopago/-/mercadopago-1.5.8.tgz#baa64963c8e563c62ecbfc9cb1546af52cf7b9c8"
+  integrity sha512-tamrRo4Z5IfLmWXDm72l7egxzQzhM5sJJtSH7n1z4EJsS71T0PddybGMZmMJp5GRiNJhbc9Ts6ZxIJ2jfxzM9Q==
 
 "@types/mime@*":
   version "3.0.1"

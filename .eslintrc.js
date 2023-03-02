@@ -35,6 +35,7 @@ module.exports = {
       'error',
       2,
       {
+        SwitchCase: 1,
         ignoredNodes: [
           `FunctionExpression > .params[decorators.length > 0]`,
           `FunctionExpression > .params > :matches(Decorator, :not(:first-child))`,
